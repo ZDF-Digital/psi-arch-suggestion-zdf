@@ -1,0 +1,32 @@
+@startuml
+set separator none
+title Other PSI System - Containers
+
+top to bottom direction
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+System(PSISystem, "PSI System", "", $tags="")
+
+System_Boundary("OtherPSISystem_boundary", "Other PSI System", $tags="") {
+  Boundary(group_0, "PSI Frontend") {
+    Container(OtherPSISystem.PSIfrontendmodule, "PSI frontend module", "This represents all frontend modules of this PSI-instance.", $tags="")
+    Container(OtherPSISystem.PSIfrontendAPI, "PSI frontend API", "This represents all api-services of this PSI-instance.", $tags="")
+    ContainerDb(OtherPSISystem.PSIapidatabase, "PSI api database", "", $tags="")
+    Container(OtherPSISystem.PSIcommentexportAPI, "PSI comment export API", "This represents the export api of this PSI-instance.", $tags="")
+    ContainerDb(OtherPSISystem.PSIcommentapidatabasesearchindex, "PSI comment api database\n (search index)", "", $tags="")
+  }
+
+}
+
+Rel_D(OtherPSISystem.PSIfrontendmodule, OtherPSISystem.PSIfrontendAPI, "submits and gathers data stored by the backend", $tags="")
+Rel_D(OtherPSISystem.PSIfrontendAPI, OtherPSISystem.PSIapidatabase, "reads from and writes to", $tags="")
+Rel_D(OtherPSISystem.PSIfrontendAPI, OtherPSISystem.PSIcommentexportAPI, "submits and gathers data stored by the backend", $tags="")
+Rel_D(OtherPSISystem.PSIcommentexportAPI, OtherPSISystem.PSIcommentapidatabasesearchindex, "reads from and writes to", $tags="")
+Rel_D(OtherPSISystem.PSIcommentexportAPI, PSISystem, "", $tags="")
+Rel_D(PSISystem, OtherPSISystem.PSIcommentexportAPI, "comment and account exchange", $tags="")
+
+SHOW_LEGEND(true)
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+set separator none
+title Broadcaster Customer Appliance - Containers
+
+top to bottom direction
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(User, "User", "A user is a broadcaster's recipient, using the services the broadcaster supplies", $tags="")
+System(PSISystem, "PSI System", "", $tags="")
+
+Rel_D(User, PSISystem, "direct interaction with a fused frontend (social network) or a catalogue of apps", $tags="")
+
+SHOW_LEGEND(true)
+@enduml
