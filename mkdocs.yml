@@ -1,4 +1,4 @@
-site_name: PSI Docs
+site_name: PSI Arch Docs
 theme:
   name: "material"
   palette:
