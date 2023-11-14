@@ -60,6 +60,8 @@ nav:
   - Introduction: index.md
   - Arch:
     - arch/index.md
+    - arch/discussion.md
+    - arch/federation.md
 extra:
   social:
     - icon: fontawesome/brands/github
