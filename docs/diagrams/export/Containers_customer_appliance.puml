@@ -1,0 +1,70 @@
+@startuml
+set separator none
+title Broadcaster Customer Appliance - Containers
+
+top to bottom direction
+
+skinparam {
+  shadowing false
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+
+hide stereotype
+
+skinparam hexagon<<PSISystem>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<BroadcasterCustomerAppliance.PSIfrontendapi>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<BroadcasterCustomerAppliance.PSIfrontendmodule>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<BroadcasterCustomerAppliance.backendofthecustomer>> {
+  BackgroundColor #a3a3a3
+  FontColor #000000
+  BorderColor #727272
+}
+skinparam rectangle<<BroadcasterCustomerAppliance.frontendframeworkofthecustomer>> {
+  BackgroundColor #a3a3a3
+  FontColor #000000
+  BorderColor #727272
+}
+
+hexagon "==PSI System\n<size:10>[Software System]</size>\n\nPSI system context" <<PSISystem>> as PSISystem
+
+package "Broadcaster Customer Appliance\n[Software System]" <<BroadcasterCustomerAppliance>> {
+  skinparam PackageBorderColor<<BroadcasterCustomerAppliance>> #727272
+  skinparam PackageFontColor<<BroadcasterCustomerAppliance>> #727272
+
+  package "Backend\n[Group]" <<group>> {
+    skinparam PackageBorderColor<<group>> #cccccc
+    skinparam PackageFontColor<<group>> #cccccc
+
+    rectangle "==PSI frontend api\n<size:10>[Container]</size>\n\nThis represents all frontend modules of this PSI-instance." <<BroadcasterCustomerAppliance.PSIfrontendapi>> as BroadcasterCustomerAppliance.PSIfrontendapi
+    rectangle "==backend of the customer\n<size:10>[Container]</size>\n\nThis represents all api-services of this PSI-instance." <<BroadcasterCustomerAppliance.backendofthecustomer>> as BroadcasterCustomerAppliance.backendofthecustomer
+  }
+
+  package "Frontend\n[Group]" <<group>> {
+    skinparam PackageBorderColor<<group>> #cccccc
+    skinparam PackageFontColor<<group>> #cccccc
+
+    rectangle "==PSI frontend module\n<size:10>[Container]</size>\n\nThis represents all frontend modules of this PSI-instance." <<BroadcasterCustomerAppliance.PSIfrontendmodule>> as BroadcasterCustomerAppliance.PSIfrontendmodule
+    rectangle "==frontend framework of the customer\n<size:10>[Container]</size>\n\nThis represents all api-services of this PSI-instance." <<BroadcasterCustomerAppliance.frontendframeworkofthecustomer>> as BroadcasterCustomerAppliance.frontendframeworkofthecustomer
+  }
+
+}
+
+BroadcasterCustomerAppliance.PSIfrontendmodule .[#707070,thickness=2].> BroadcasterCustomerAppliance.frontendframeworkofthecustomer : "<color:#707070>embeds"
+BroadcasterCustomerAppliance.PSIfrontendmodule .[#707070,thickness=2].> BroadcasterCustomerAppliance.PSIfrontendapi : "<color:#707070>calls"
+BroadcasterCustomerAppliance.backendofthecustomer .[#707070,thickness=2].> PSISystem : "<color:#707070>authenticates"
+@enduml

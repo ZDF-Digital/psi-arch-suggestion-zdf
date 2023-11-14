@@ -1,0 +1,12 @@
+mkdocs
+mkdocs-material
+mkdocstrings[python]
+mkdocs-extra-sass-plugin
+mkdocs-minify-plugin>=0.3
+mkdocs-build-plantuml-plugin 
+mkdocs-redirects>=1.0
+mkdocs-glightbox
+mike
+pymdown-extensions
+plantuml-markdown
+jinja2==3.0.3

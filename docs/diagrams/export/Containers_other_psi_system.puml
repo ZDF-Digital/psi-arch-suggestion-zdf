@@ -1,0 +1,96 @@
+@startuml
+set separator none
+title Other PSI System - Containers
+
+top to bottom direction
+
+skinparam {
+  shadowing false
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+
+hide stereotype
+
+skinparam hexagon<<PSISystem>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam database<<OtherPSISystem.PSIapidatabase>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<OtherPSISystem.PSIdataexchangeserviceDES>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<OtherPSISystem.PSIfrontendAPI>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<OtherPSISystem.PSIfrontendmodule>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam database<<OtherPSISystem.instanceopeniddatabase>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam database<<OtherPSISystem.instanceuserdatabase>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+skinparam rectangle<<OtherPSISystem.openidservice>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+
+hexagon "==PSI System\n<size:10>[Software System]</size>\n\nPSI system context" <<PSISystem>> as PSISystem
+
+package "Other PSI System\n[Software System]" <<OtherPSISystem>> {
+  skinparam PackageBorderColor<<OtherPSISystem>> #727272
+  skinparam PackageFontColor<<OtherPSISystem>> #727272
+
+  package "PSI Frontend\n[Group]" <<group>> {
+    skinparam PackageBorderColor<<group>> #cccccc
+    skinparam PackageFontColor<<group>> #cccccc
+
+    rectangle "==PSI frontend module\n<size:10>[Container]</size>\n\nThis represents all frontend modules of this PSI-instance." <<OtherPSISystem.PSIfrontendmodule>> as OtherPSISystem.PSIfrontendmodule
+    rectangle "==PSI frontend API\n<size:10>[Container]</size>\n\nThis represents all api-services of this PSI-instance." <<OtherPSISystem.PSIfrontendAPI>> as OtherPSISystem.PSIfrontendAPI
+    database "==PSI api database\n<size:10>[Container]</size>" <<OtherPSISystem.PSIapidatabase>> as OtherPSISystem.PSIapidatabase
+  }
+
+  package "Peripheral Services\n[Group]" <<group>> {
+    skinparam PackageBorderColor<<group>> #cccccc
+    skinparam PackageFontColor<<group>> #cccccc
+
+    rectangle "==PSI data exchange service (DES)\n<size:10>[Container]</size>\n\nThis represents the export api of this PSI-instance." <<OtherPSISystem.PSIdataexchangeserviceDES>> as OtherPSISystem.PSIdataexchangeserviceDES
+    rectangle "==open-id service\n<size:10>[Container]</size>\n\nThis service provides authentication and authorization services. It produces JWT and other token-formats (bearer, etc.)." <<OtherPSISystem.openidservice>> as OtherPSISystem.openidservice
+    database "==instance user database\n<size:10>[Container]</size>" <<OtherPSISystem.instanceuserdatabase>> as OtherPSISystem.instanceuserdatabase
+    database "==instance openid database\n<size:10>[Container]</size>" <<OtherPSISystem.instanceopeniddatabase>> as OtherPSISystem.instanceopeniddatabase
+  }
+
+}
+
+OtherPSISystem.PSIfrontendmodule .[#707070,thickness=2].> OtherPSISystem.PSIfrontendAPI : "<color:#707070>submits and gathers data stored by the backend"
+OtherPSISystem.PSIfrontendAPI .[#707070,thickness=2].> OtherPSISystem.PSIapidatabase : "<color:#707070>reads from and writes to"
+OtherPSISystem.PSIfrontendAPI .[#707070,thickness=2].> OtherPSISystem.PSIdataexchangeserviceDES : "<color:#707070>submits and gathers data stored by the backend"
+OtherPSISystem.PSIfrontendAPI .[#707070,thickness=2].> OtherPSISystem.openidservice : "<color:#707070>validates and authenticates users"
+OtherPSISystem.PSIfrontendAPI .[#707070,thickness=2].> OtherPSISystem.instanceuserdatabase : "<color:#707070>updates own user properties, reads own user properties"
+OtherPSISystem.openidservice .[#707070,thickness=2].> OtherPSISystem.instanceuserdatabase : "<color:#707070>reads from"
+OtherPSISystem.openidservice .[#707070,thickness=2].> OtherPSISystem.instanceopeniddatabase : "<color:#707070>reads from and writes to"
+OtherPSISystem.PSIdataexchangeserviceDES .[#707070,thickness=2].> PSISystem : "<color:#707070>"
+PSISystem .[#707070,thickness=2].> OtherPSISystem.PSIdataexchangeserviceDES : "<color:#707070>comment and account exchange"
+PSISystem .[#707070,thickness=2].> OtherPSISystem.openidservice : "<color:#707070>authenticate and authorize system using auth-code"
+OtherPSISystem.openidservice .[#707070,thickness=2].> PSISystem : "<color:#707070>authenticate and authorize system using auth-code"
+@enduml
