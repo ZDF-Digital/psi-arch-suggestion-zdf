@@ -1,0 +1,106 @@
+13:47:25.196 [main] INFO  d.s.c.ls.C4LanguageServerLauncher - Starting Socket Connection
+13:47:25.210 [main] INFO  d.s.c.ls.C4LanguageServerLauncher - READY_TO_CONNECT
+13:47:25.219 [main] INFO  d.s.c.ls.C4LanguageServerLauncher - Launching C4LanguageServer started
+13:47:25.392 [main] INFO  d.s.c.ls.service.C4LanguageServer - getTextDocumentService
+13:47:25.451 [main] INFO  d.s.c.ls.service.C4LanguageServer - getTextDocumentService
+13:47:25.452 [main] INFO  d.s.c.ls.service.C4LanguageServer - getWorkspaceService
+13:47:25.459 [main] INFO  d.s.c.ls.service.C4LanguageServer - connect
+13:47:25.505 [pool-1-thread-1] INFO  d.s.c.ls.service.C4LanguageServer - initialize
+13:47:25.538 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - didOpen file:///home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:25.540 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - documentColor
+13:47:25.539 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - --> getDiagnostics 0
+13:47:25.541 [ForkJoinPool.commonPool-worker-2] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:47:25.552 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c.ls.model.C4DocumentManager - createModel /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:25.553 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c.ls.model.C4DocumentManager - Parsing...
+13:47:25.565 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.ls.model.C4DocumentManager - ParserException Unexpected tokens (expected: workspace) at line 1 of /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl: frontend = group "Frontend" {
+13:47:25.566 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c4dsl.ls.model.C4DocumentModel - setValid true
+13:47:25.567 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDiagnostics
+13:47:25.567 [ForkJoinPool.commonPool-worker-2] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:25.568 [ForkJoinPool.commonPool-worker-2] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:47:25.568 [ForkJoinPool.commonPool-worker-2] DEBUG d.s.c.ls.provider.C4ColorProvider - calcDocumentColors file:/home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:25.568 [ForkJoinPool.commonPool-worker-2] DEBUG d.s.c.ls.provider.C4ColorProvider -                    []
+13:47:25.780 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - definition
+13:47:25.781 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:47:25.782 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:25.782 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:47:25.782 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c.l.p.C4DefinitionProvider - calcDefinitions for line 20
+13:47:25.957 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - codeLens
+13:47:25.958 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:47:25.958 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:25.958 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:47:26.032 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.ls.service.C4WorkspaceService - executeCommand c4-server.text-decorations
+13:47:26.033 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - textDecorations
+13:47:26.033 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - didSave file:///home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:26.033 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:47:26.033 [ForkJoinPool.commonPool-worker-1] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:26.034 [ForkJoinPool.commonPool-worker-1] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:47:26.034 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - semanticTokensFull
+13:47:26.035 [ForkJoinPool.commonPool-worker-2] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:47:26.035 [ForkJoinPool.commonPool-worker-2] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:47:26.035 [ForkJoinPool.commonPool-worker-2] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:47:26.037 [ForkJoinPool.commonPool-worker-2] DEBUG d.s.c.l.p.C4SemanticTokenProvider - Semantik Tokens at []
+13:47:26.391 [pool-1-thread-1] INFO  d.s.c.ls.service.C4WorkspaceService - didChangeWatchedFiles
+13:49:29.434 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.ls.service.C4WorkspaceService - executeCommand c4-server.text-decorations
+13:49:29.434 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - documentColor
+13:49:29.435 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - textDecorations
+13:49:29.435 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.435 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.435 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.435 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.435 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.provider.C4ColorProvider - calcDocumentColors file:/home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.435 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.provider.C4ColorProvider -                    []
+13:49:29.435 [ForkJoinPool.commonPool-worker-3] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.435 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.890 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - codeLens
+13:49:29.890 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.890 [ForkJoinPool.commonPool-worker-3] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.890 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.890 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - semanticTokensFull
+13:49:29.890 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.890 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.890 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.891 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.l.p.C4SemanticTokenProvider - Semantik Tokens at []
+13:49:29.933 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - definition
+13:49:29.933 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.934 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.934 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.934 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.l.p.C4DefinitionProvider - calcDefinitions for line 2
+13:49:29.983 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - definition
+13:49:29.984 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.984 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.984 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.ls.service.C4WorkspaceService - executeCommand c4-server.text-decorations
+13:49:29.984 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.984 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - didSave file:///home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.984 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.l.p.C4DefinitionProvider - calcDefinitions for line 4
+13:49:29.984 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - textDecorations
+13:49:29.984 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.984 [ForkJoinPool.commonPool-worker-3] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.984 [ForkJoinPool.commonPool-worker-3] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.984 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - definition
+13:49:29.985 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:29.985 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:29.985 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:29.985 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.l.p.C4DefinitionProvider - calcDefinitions for line 4
+13:49:30.073 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - definition
+13:49:30.073 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:30.074 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:30.074 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:30.074 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.l.p.C4DefinitionProvider - calcDefinitions for line 6
+13:49:30.153 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - definition
+13:49:30.153 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:30.154 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:30.154 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:30.154 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.l.p.C4DefinitionProvider - calcDefinitions for line 8
+13:49:30.406 [pool-1-thread-1] INFO  d.s.c.ls.service.C4WorkspaceService - didChangeWatchedFiles
+13:49:40.772 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - codeLens
+13:49:40.773 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:40.773 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:40.773 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:45.676 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - codeLens
+13:49:45.677 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:45.677 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:45.677 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument
+13:49:47.903 [pool-1-thread-1] INFO  d.s.c.l.s.C4TextDocumentService - codeLens
+13:49:47.903 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - --> getDocument
+13:49:47.904 [ForkJoinPool.commonPool-worker-4] DEBUG d.s.c.ls.model.C4DocumentManager - getModel file: /home/caos/workspace/psi_arch/diagrams/system_context/modules/customer_appliance.dsl
+13:49:47.904 [ForkJoinPool.commonPool-worker-4] INFO  d.s.c.l.s.C4TextDocumentService - <-- getDocument

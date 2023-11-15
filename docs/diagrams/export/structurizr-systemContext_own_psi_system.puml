@@ -1,0 +1,59 @@
+@startuml
+set separator none
+title PSI System - System Context
+
+top to bottom direction
+
+skinparam {
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+
+hide stereotype
+
+skinparam hexagon<<BroadcasterCustomerAppliance>> {
+  BackgroundColor #a3a3a3
+  FontColor #000000
+  BorderColor #727272
+  shadowing false
+}
+skinparam hexagon<<OtherPSISystem>> {
+  BackgroundColor #a3a3a3
+  FontColor #000000
+  BorderColor #727272
+  shadowing false
+}
+skinparam hexagon<<PSISystem>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+  shadowing false
+}
+skinparam person<<User>> {
+  BackgroundColor #001ac5
+  FontColor #ffffff
+  BorderColor #001289
+  shadowing false
+}
+skinparam person<<Userofothersystem>> {
+  BackgroundColor #a3a3a3
+  FontColor #ffffff
+  BorderColor #727272
+  shadowing false
+}
+
+person "==User\n<size:10>[Person]</size>\n\nA user is a broadcaster's recipient, using the services the broadcaster supplies" <<User>> as User
+person "==User of other system\n<size:10>[Person]</size>\n\nThis user is another broadcaster's recipient, using the services this broadcaster supplies" <<Userofothersystem>> as Userofothersystem
+hexagon "==Broadcaster Customer Appliance\n<size:10>[Software System]</size>\n\nBroadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)" <<BroadcasterCustomerAppliance>> as BroadcasterCustomerAppliance
+hexagon "==PSI System\n<size:10>[Software System]</size>\n\nPSI system context" <<PSISystem>> as PSISystem
+hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nBroadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)" <<OtherPSISystem>> as OtherPSISystem
+
+BroadcasterCustomerAppliance .[#707070,thickness=2].> PSISystem : "<color:#707070>authenticates"
+User .[#707070,thickness=2].> BroadcasterCustomerAppliance : "<color:#707070>Consumes comments / social contents that are embedded into the customer appliance"
+User .[#707070,thickness=2].> PSISystem : "<color:#707070>direct interaction with a fused frontend (social network) or a catalogue of apps"
+OtherPSISystem .[#707070,thickness=2].> PSISystem : "<color:#707070>"
+PSISystem .[#707070,thickness=2].> OtherPSISystem : "<color:#707070>comment and account exchange"
+Userofothersystem .[#707070,thickness=2].> OtherPSISystem : "<color:#707070>Consumes comments / social contents of this PSI-system"
+@enduml
