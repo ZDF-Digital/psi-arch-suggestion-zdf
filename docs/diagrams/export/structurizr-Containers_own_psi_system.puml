@@ -88,7 +88,7 @@ skinparam rectangle<<PSISystem>> {
 person "==User\n<size:10>[Person]</size>\n\nA user is a broadcaster's recipient, using the services the broadcaster supplies" <<User>> as User
 person "==User of other system\n<size:10>[Person]</size>\n\nThis user is another broadcaster's recipient, using the services this broadcaster supplies" <<Userofothersystem>> as Userofothersystem
 hexagon "==Broadcaster Customer Appliance\n<size:10>[Software System]</size>\n\nBroadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)" <<BroadcasterCustomerAppliance>> as BroadcasterCustomerAppliance
-hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nBroadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)" <<OtherPSISystem>> as OtherPSISystem
+hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nOther broadcasters PSI system" <<OtherPSISystem>> as OtherPSISystem
 
 rectangle "PSI System\n<size:10>[Software System]</size>" <<PSISystem>> {
   rectangle "PSI Frontend" <<group1>> {

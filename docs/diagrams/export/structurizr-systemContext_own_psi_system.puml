@@ -48,7 +48,7 @@ person "==User\n<size:10>[Person]</size>\n\nA user is a broadcaster's recipient,
 person "==User of other system\n<size:10>[Person]</size>\n\nThis user is another broadcaster's recipient, using the services this broadcaster supplies" <<Userofothersystem>> as Userofothersystem
 hexagon "==Broadcaster Customer Appliance\n<size:10>[Software System]</size>\n\nBroadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)" <<BroadcasterCustomerAppliance>> as BroadcasterCustomerAppliance
 hexagon "==PSI System\n<size:10>[Software System]</size>\n\nPSI system context" <<PSISystem>> as PSISystem
-hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nBroadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)" <<OtherPSISystem>> as OtherPSISystem
+hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nOther broadcasters PSI system" <<OtherPSISystem>> as OtherPSISystem
 
 BroadcasterCustomerAppliance .[#707070,thickness=2].> PSISystem : "<color:#707070>authenticates"
 User .[#707070,thickness=2].> BroadcasterCustomerAppliance : "<color:#707070>Consumes comments / social contents that are embedded into the customer appliance"

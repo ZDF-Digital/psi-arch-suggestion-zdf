@@ -18,7 +18,7 @@ workspace {
 
         other_psi_system = softwareSystem "Other PSI System" {
                 tags "other psi" "Service API, foreign"
-                description "Broadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)"
+                description "Other broadcasters PSI system"
                 !include modules/one_psi.dsl
         }
 
