@@ -9,20 +9,20 @@ In the early design-phase of this project we are going to focus on System Contex
 
 ## System Context Overview
 To have a compact overview over all systems involved in our design, we can have a look at the System Context:
-![file](../diagrams/out/systemContext_own_psi_system.svg)
+![file](../diagrams/out/structurizr-systemContext_own_psi_system.svg)
 The systems involved communicate with each other using apis or message queues. They authenticate with each other using the openid provider and client of the system.
 
 
 ## Container Context Owned PSI
 The psi-system consists of the following containers that are relevant in the context of federation:
 
-![file](../diagrams/out/Containers_own_psi_system.svg)
+![file](../diagrams/out/structurizr-Containers_own_psi_system.svg)
 
 ## Container Context Customer Containers_customer_appliance
 The assumed containers that are relevant in the context of federation in the customers appliance are abstracted as follows:
 
-![file](../diagrams/out/Containers_customer_appliance.svg)
+![file](../diagrams/out/structurizr-Containers_customer_appliance.svg)
 
 ## Foreign PSI-Systems
 The context of the other psi-systems looks like this:
-![file](../diagrams/out/Containers_other_psi_system.svg)
+![file](../diagrams/out/structurizr-Containers_other_psi_system.svg)
