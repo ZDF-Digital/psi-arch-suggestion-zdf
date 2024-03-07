@@ -1,4 +1,4 @@
-#PSI quick intro
+# PSI quick intro
 
 ## Who we are & what we want
 

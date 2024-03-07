@@ -62,6 +62,8 @@ nav:
     - arch/index.md
     - arch/discussion.md
     - arch/federation.md
+  - Guidelines:
+    - guidelines/deployment.md
 extra:
   social:
     - icon: fontawesome/brands/github
