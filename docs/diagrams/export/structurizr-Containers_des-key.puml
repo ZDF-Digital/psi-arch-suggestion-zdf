@@ -1,0 +1,41 @@
+@startuml
+set separator none
+
+skinparam {
+  shadowing false
+  arrowFontSize 15
+  defaultTextAlignment center
+  wrapWidth 100
+  maxMessageSize 100
+}
+hide stereotype
+
+skinparam rectangle<<_transparent>> {
+  BorderColor transparent
+  BackgroundColor transparent
+  FontColor transparent
+}
+
+skinparam database<<1>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+database "==Database, owned" <<1>>
+
+skinparam hexagon<<2>> {
+  BackgroundColor #a3a3a3
+  FontColor #000000
+  BorderColor #727272
+}
+hexagon "==Service API, foreign" <<2>>
+
+skinparam rectangle<<3>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+}
+rectangle "==owned" <<3>>
+
+
+@enduml

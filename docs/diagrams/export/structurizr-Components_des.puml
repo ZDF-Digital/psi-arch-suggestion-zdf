@@ -1,0 +1,39 @@
+@startuml
+set separator none
+title PSI System - PSI data exchange service (DES) - Components
+
+top to bottom direction
+
+skinparam {
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+
+hide stereotype
+
+skinparam hexagon<<OtherPSISystem>> {
+  BackgroundColor #a3a3a3
+  FontColor #000000
+  BorderColor #727272
+  shadowing false
+}
+skinparam database<<PSISystem.PSIcommentapidatabasesearchindex>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+  shadowing false
+}
+skinparam rectangle<<PSISystem.PSIfrontendAPI>> {
+  BackgroundColor #0062ff
+  FontColor #000000
+  BorderColor #0044b2
+  shadowing false
+}
+
+database "==PSI comment api database\n (search index)\n<size:10>[Container]</size>" <<PSISystem.PSIcommentapidatabasesearchindex>> as PSISystem.PSIcommentapidatabasesearchindex
+rectangle "==PSI frontend API\n<size:10>[Container]</size>\n\nThis represents all api-services of this PSI-instance." <<PSISystem.PSIfrontendAPI>> as PSISystem.PSIfrontendAPI
+hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nOther broadcasters PSI system" <<OtherPSISystem>> as OtherPSISystem
+
+@enduml
