@@ -34,11 +34,6 @@ jobs:
       - run: mkdocs build
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-      - run: mkdir ./site/dist
-      - run: cp gw* ./site/dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
