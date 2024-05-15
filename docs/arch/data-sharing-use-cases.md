@@ -18,6 +18,8 @@ Possible use cases are:
 
 6. **Cross Platform Comments**: Shared comment data can enable users to have conversations with their accounts on other PSMs platforms (CBC/RC/RTBF/ZDF/SRG, ARD/ORF/others) (PSI-relevant)
 
+7. **Tuning of text analysis**: If all comments are translated automatically, text analysis across different PSMs will enable you to finetune nlp-analysis like topic modeling and similar models using the original comment data.
+
 ## Usage data sharing
 Usage data sharing among broadcasters operating in the same language presents an array of compelling opportunities for optimizing content delivery and audience engagement. By pooling their usage data, broadcasters can gain deeper insights into viewer behaviors, preferences, and consumption patterns. This shared understanding allows them to refine their programming schedules, tailor content recommendations, and optimize advertising placements to better serve their collective audience. Additionally, by identifying trends and popular content across multiple platforms, broadcasters can coordinate efforts to amplify impactful stories and ensure a more cohesive viewer experience. Moreover, shared usage data enables broadcasters to collectively address challenges such as audience retention and platform engagement, ultimately fostering a more dynamic and responsive media ecosystem.
 Possible use cases are:
