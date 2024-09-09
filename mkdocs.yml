@@ -60,12 +60,12 @@ nav:
   - Introduction: index.md
   - Arch:
     - arch/index.md
-    - arch/discussion.md
+    - arch/protocols.md
     - arch/federation.md
     - arch/identitity_propagation_security.md
-  - Guidelines:
-    - guidelines/deployment.md
-    - guidelines/arch.md
+  # - Guidelines:
+  #   - guidelines/deployment.md
+  #   - guidelines/arch.md
 extra:
   social:
     - icon: fontawesome/brands/github
