@@ -60,7 +60,12 @@ nav:
   - Introduction: index.md
   - Arch:
     - arch/index.md
+<<<<<<< HEAD
     - arch/protocols.md
+=======
+    - arch/data-sharing-use-cases.md
+    - arch/discussion.md
+>>>>>>> b49fec993416e601a9d1d46eaf23206461d05d79
     - arch/federation.md
     - arch/identitity_propagation_security.md
   # - Guidelines:
