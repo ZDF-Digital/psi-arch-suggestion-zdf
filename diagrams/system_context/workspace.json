@@ -1,0 +1,916 @@
+{
+  "configuration" : { },
+  "description" : "Description",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2025-02-21T13:56:12Z",
+  "model" : {
+    "people" : [ {
+      "description" : "A user is a broadcaster's recipient, using the services the broadcaster supplies",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user"
+      },
+      "relationships" : [ {
+        "description" : "Consumes comments / social contents that are embedded into the customer appliance",
+        "destinationId" : "20",
+        "id" : "48",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "direct interaction with a fused frontend (social network) or a catalogue of apps",
+        "destinationId" : "4",
+        "id" : "49",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "direct interaction with a fused frontend (social network) or a catalogue of apps",
+        "destinationId" : "3",
+        "id" : "50",
+        "linkedRelationshipId" : "49",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person,user"
+    }, {
+      "description" : "This user is another broadcaster's recipient, using the services this broadcaster supplies",
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "User of other system",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user_of_other_system"
+      },
+      "relationships" : [ {
+        "description" : "Consumes comments / social contents of this PSI-system",
+        "destinationId" : "31",
+        "id" : "67",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,user,foreign"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "This represents all frontend modules of this PSI-instance.",
+        "documentation" : { },
+        "group" : "PSI Frontend",
+        "id" : "4",
+        "name" : "PSI frontend module",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.psi_frontend_module"
+        },
+        "relationships" : [ {
+          "description" : "submits and gathers data stored by the backend",
+          "destinationId" : "5",
+          "id" : "6",
+          "sourceId" : "4",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,PSI frontend module,owned"
+      }, {
+        "description" : "This represents all api-services of this PSI-instance.",
+        "documentation" : { },
+        "group" : "PSI Frontend",
+        "id" : "5",
+        "name" : "PSI frontend API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.psi_frontend_api"
+        },
+        "relationships" : [ {
+          "description" : "reads from and writes to",
+          "destinationId" : "7",
+          "id" : "8",
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        }, {
+          "description" : "submits and gathers data stored by the backend",
+          "destinationId" : "9",
+          "id" : "10",
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        }, {
+          "description" : "validates and authenticates users",
+          "destinationId" : "11",
+          "id" : "12",
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        }, {
+          "description" : "updates own user properties, reads own user properties",
+          "destinationId" : "15",
+          "id" : "16",
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,PSI frontend API,owned"
+      }, {
+        "documentation" : { },
+        "group" : "PSI Frontend",
+        "id" : "7",
+        "name" : "PSI api database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.f3df1bb4-4901-406a-9334-7207841400cf"
+        },
+        "tags" : "Element,Container,PSI api database,Database,owned"
+      }, {
+        "description" : "This represents the export api of this PSI-instance.",
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "9",
+        "name" : "PSI data exchange service (DES)",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.des"
+        },
+        "relationships" : [ {
+          "description" : "reads from and writes to",
+          "destinationId" : "13",
+          "id" : "14",
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "comment and account exchange via generic protocol (AT_Proto, ActivityPub, PubSub)",
+          "destinationId" : "37",
+          "id" : "57",
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "comment and account exchange via generic protocol (AT_Proto, ActivityPub, PubSub)",
+          "destinationId" : "31",
+          "id" : "58",
+          "linkedRelationshipId" : "57",
+          "sourceId" : "9"
+        } ],
+        "tags" : "Element,Container,PSI data exchange service (DES),owned"
+      }, {
+        "description" : "This service provides authentication and authorization services. It produces JWT and other token-formats (bearer, etc.).",
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "11",
+        "name" : "open-id service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.openid_service"
+        },
+        "relationships" : [ {
+          "description" : "reads from",
+          "destinationId" : "15",
+          "id" : "17",
+          "sourceId" : "11",
+          "tags" : "Relationship"
+        }, {
+          "description" : "reads from and writes to",
+          "destinationId" : "18",
+          "id" : "19",
+          "sourceId" : "11",
+          "tags" : "Relationship"
+        }, {
+          "description" : "authenticate and authorize system using auth-code",
+          "destinationId" : "39",
+          "id" : "61",
+          "sourceId" : "11",
+          "tags" : "Relationship"
+        }, {
+          "description" : "authenticate and authorize system using auth-code",
+          "destinationId" : "31",
+          "id" : "62",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "11"
+        } ],
+        "tags" : "Element,Container,openid,owned"
+      }, {
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "13",
+        "name" : "PSI comment api database\n (search index)",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.api_db"
+        },
+        "tags" : "Element,Container,PSI comment api database,Database,owned"
+      }, {
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "15",
+        "name" : "instance user database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.user_db"
+        },
+        "tags" : "Element,Container,stores users of this instance,Database,owned"
+      }, {
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "18",
+        "name" : "instance openid database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "psi.openid_db"
+        },
+        "tags" : "Element,Container,stores tokens,users,consumers,codes,Database,owned"
+      } ],
+      "description" : "PSI system context",
+      "documentation" : { },
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "PSI System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "psi"
+      },
+      "relationships" : [ {
+        "description" : "comment and account exchange via generic protocol (AT_Proto, ActivityPub, PubSub)",
+        "destinationId" : "37",
+        "id" : "59",
+        "linkedRelationshipId" : "57",
+        "sourceId" : "3"
+      }, {
+        "description" : "comment and account exchange via generic protocol (AT_Proto, ActivityPub, PubSub)",
+        "destinationId" : "31",
+        "id" : "60",
+        "linkedRelationshipId" : "57",
+        "sourceId" : "3"
+      }, {
+        "description" : "authenticate and authorize system using auth-code",
+        "destinationId" : "39",
+        "id" : "63",
+        "linkedRelationshipId" : "61",
+        "sourceId" : "3"
+      } ],
+      "tags" : "Element,Software System,Service API,owned"
+    }, {
+      "containers" : [ {
+        "description" : "This represents all frontend modules of this PSI-instance.",
+        "documentation" : { },
+        "group" : "Frontend",
+        "id" : "21",
+        "name" : "PSI frontend module",
+        "properties" : {
+          "structurizr.dsl.identifier" : "customer_appliance.psi_frontend_module"
+        },
+        "relationships" : [ {
+          "description" : "embeds",
+          "destinationId" : "22",
+          "id" : "23",
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        }, {
+          "description" : "calls",
+          "destinationId" : "24",
+          "id" : "25",
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,PSI frontend module,owned"
+      }, {
+        "description" : "This represents all api-services of this PSI-instance.",
+        "documentation" : { },
+        "group" : "Frontend",
+        "id" : "22",
+        "name" : "frontend framework of the customer",
+        "properties" : {
+          "structurizr.dsl.identifier" : "customer_appliance.customer_frontend_framework"
+        },
+        "tags" : "Element,Container,PSI frontend API,foreign"
+      }, {
+        "description" : "This represents all frontend modules of this PSI-instance.",
+        "documentation" : { },
+        "group" : "Backend",
+        "id" : "24",
+        "name" : "PSI frontend api",
+        "properties" : {
+          "structurizr.dsl.identifier" : "customer_appliance.psi_frontend_api"
+        },
+        "tags" : "Element,Container,PSI frontend api,owned"
+      }, {
+        "description" : "This represents all api-services of this PSI-instance.",
+        "documentation" : { },
+        "group" : "Backend",
+        "id" : "26",
+        "name" : "backend of the customer",
+        "properties" : {
+          "structurizr.dsl.identifier" : "customer_appliance.customer_backend"
+        },
+        "relationships" : [ {
+          "description" : "authenticates",
+          "destinationId" : "11",
+          "id" : "27",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "authenticates",
+          "destinationId" : "3",
+          "id" : "28",
+          "linkedRelationshipId" : "27",
+          "sourceId" : "26"
+        } ],
+        "tags" : "Element,Container,PSI frontend API,foreign"
+      } ],
+      "description" : "Broadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)",
+      "documentation" : { },
+      "id" : "20",
+      "location" : "Unspecified",
+      "name" : "Broadcaster Customer Appliance",
+      "properties" : {
+        "structurizr.dsl.identifier" : "customer_appliance"
+      },
+      "relationships" : [ {
+        "description" : "authenticates",
+        "destinationId" : "11",
+        "id" : "29",
+        "linkedRelationshipId" : "27",
+        "sourceId" : "20"
+      }, {
+        "description" : "authenticates",
+        "destinationId" : "3",
+        "id" : "30",
+        "linkedRelationshipId" : "27",
+        "sourceId" : "20"
+      }, {
+        "description" : "embeds PSI-frontend modules(native or via iframe)",
+        "destinationId" : "4",
+        "id" : "51",
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      }, {
+        "description" : "authenticates at PSI-related  backends of its own PSI-cluster",
+        "destinationId" : "5",
+        "id" : "52",
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,broadcaster appliance,Service API,foreign"
+    }, {
+      "containers" : [ {
+        "description" : "This represents all frontend modules of this PSI-instance.",
+        "documentation" : { },
+        "group" : "PSI Frontend",
+        "id" : "32",
+        "name" : "PSI frontend module",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.psi_frontend_module"
+        },
+        "relationships" : [ {
+          "description" : "submits and gathers data stored by the backend",
+          "destinationId" : "33",
+          "id" : "34",
+          "sourceId" : "32",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,PSI frontend module,owned"
+      }, {
+        "description" : "This represents all api-services of this PSI-instance.",
+        "documentation" : { },
+        "group" : "PSI Frontend",
+        "id" : "33",
+        "name" : "PSI frontend API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.psi_frontend_api"
+        },
+        "relationships" : [ {
+          "description" : "reads from and writes to",
+          "destinationId" : "35",
+          "id" : "36",
+          "sourceId" : "33",
+          "tags" : "Relationship"
+        }, {
+          "description" : "submits and gathers data stored by the backend",
+          "destinationId" : "37",
+          "id" : "38",
+          "sourceId" : "33",
+          "tags" : "Relationship"
+        }, {
+          "description" : "validates and authenticates users",
+          "destinationId" : "39",
+          "id" : "40",
+          "sourceId" : "33",
+          "tags" : "Relationship"
+        }, {
+          "description" : "updates own user properties, reads own user properties",
+          "destinationId" : "43",
+          "id" : "44",
+          "sourceId" : "33",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,PSI frontend API,owned"
+      }, {
+        "documentation" : { },
+        "group" : "PSI Frontend",
+        "id" : "35",
+        "name" : "PSI api database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.64334d28-514d-4c1c-b4ee-ec67a3af9188"
+        },
+        "tags" : "Element,Container,PSI api database,Database,owned"
+      }, {
+        "description" : "This represents the export api of this PSI-instance.",
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "37",
+        "name" : "PSI data exchange service (DES)",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.des"
+        },
+        "relationships" : [ {
+          "description" : "reads from and writes to",
+          "destinationId" : "41",
+          "id" : "42",
+          "sourceId" : "37",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "9",
+          "id" : "53",
+          "sourceId" : "37",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "3",
+          "id" : "54",
+          "linkedRelationshipId" : "53",
+          "sourceId" : "37"
+        } ],
+        "tags" : "Element,Container,PSI data exchange service (DES),owned"
+      }, {
+        "description" : "This service provides authentication and authorization services. It produces JWT and other token-formats (bearer, etc.).",
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "39",
+        "name" : "open-id service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.openid_service"
+        },
+        "relationships" : [ {
+          "description" : "reads from",
+          "destinationId" : "43",
+          "id" : "45",
+          "sourceId" : "39",
+          "tags" : "Relationship"
+        }, {
+          "description" : "reads from and writes to",
+          "destinationId" : "46",
+          "id" : "47",
+          "sourceId" : "39",
+          "tags" : "Relationship"
+        }, {
+          "description" : "authenticate and authorize system using auth-code",
+          "destinationId" : "11",
+          "id" : "64",
+          "sourceId" : "39",
+          "tags" : "Relationship"
+        }, {
+          "description" : "authenticate and authorize system using auth-code",
+          "destinationId" : "3",
+          "id" : "65",
+          "linkedRelationshipId" : "64",
+          "sourceId" : "39"
+        } ],
+        "tags" : "Element,Container,openid,owned"
+      }, {
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "41",
+        "name" : "PSI comment api database\n (search index)",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.api_db"
+        },
+        "tags" : "Element,Container,PSI comment api database,Database,owned"
+      }, {
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "43",
+        "name" : "instance user database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.user_db"
+        },
+        "tags" : "Element,Container,stores users of this instance,Database,owned"
+      }, {
+        "documentation" : { },
+        "group" : "Peripheral Services",
+        "id" : "46",
+        "name" : "instance openid database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "other_psi_system.openid_db"
+        },
+        "tags" : "Element,Container,stores tokens,users,consumers,codes,Database,owned"
+      } ],
+      "description" : "Other broadcasters PSI system",
+      "documentation" : { },
+      "id" : "31",
+      "location" : "Unspecified",
+      "name" : "Other SoMe System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "other_psi_system"
+      },
+      "relationships" : [ {
+        "destinationId" : "9",
+        "id" : "55",
+        "linkedRelationshipId" : "53",
+        "sourceId" : "31"
+      }, {
+        "destinationId" : "3",
+        "id" : "56",
+        "linkedRelationshipId" : "53",
+        "sourceId" : "31"
+      }, {
+        "description" : "authenticate and authorize system using auth-code",
+        "destinationId" : "11",
+        "id" : "66",
+        "linkedRelationshipId" : "64",
+        "sourceId" : "31"
+      } ],
+      "tags" : "Element,Software System,other psi,Service API,foreign"
+    } ]
+  },
+  "name" : "Name",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKICAgIAogICAgIWlkZW50aWZpZXJzIGhpZXJhcmNoaWNhbAogICAgbW9kZWwgewogICAgICAgIHVzZXIgPSBwZXJzb24gIlVzZXIiICJBIHVzZXIgaXMgYSBicm9hZGNhc3RlcidzIHJlY2lwaWVudCwgdXNpbmcgdGhlIHNlcnZpY2VzIHRoZSBicm9hZGNhc3RlciBzdXBwbGllcyIgInVzZXIiIAoKICAgICAgICB1c2VyX29mX290aGVyX3N5c3RlbSA9IHBlcnNvbiAiVXNlciBvZiBvdGhlciBzeXN0ZW0iICJUaGlzIHVzZXIgaXMgYW5vdGhlciBicm9hZGNhc3RlcidzIHJlY2lwaWVudCwgdXNpbmcgdGhlIHNlcnZpY2VzIHRoaXMgYnJvYWRjYXN0ZXIgc3VwcGxpZXMiICJ1c2VyLCBmb3JlaWduIgoKICAgICAgICBwc2kgPSBzb2Z0d2FyZVN5c3RlbSAiUFNJIFN5c3RlbSIgIlBTSSBzeXN0ZW0gY29udGV4dCIgIlNlcnZpY2UgQVBJLCBvd25lZCIgewogICAgICAgICAgICBmcm9udGVuZCA9IGdyb3VwICJQU0kgRnJvbnRlbmQiIHsKICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9tb2R1bGUgPSBjb250YWluZXIgIlBTSSBmcm9udGVuZCBtb2R1bGUiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJQU0kgZnJvbnRlbmQgbW9kdWxlLCBvd25lZCIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiVGhpcyByZXByZXNlbnRzIGFsbCBmcm9udGVuZCBtb2R1bGVzIG9mIHRoaXMgUFNJLWluc3RhbmNlLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9hcGkgPSBjb250YWluZXIgIlBTSSBmcm9udGVuZCBBUEkiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJQU0kgZnJvbnRlbmQgQVBJLCBvd25lZCIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiVGhpcyByZXByZXNlbnRzIGFsbCBhcGktc2VydmljZXMgb2YgdGhpcyBQU0ktaW5zdGFuY2UuIgogICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9tb2R1bGUgLT4gdGhpcyAic3VibWl0cyBhbmQgZ2F0aGVycyBkYXRhIHN0b3JlZCBieSB0aGUgYmFja2VuZCIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGNvbnRhaW5lciAiUFNJIGFwaSBkYXRhYmFzZSIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIlBTSSBhcGkgZGF0YWJhc2UiICJEYXRhYmFzZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgcHNpX2Zyb250ZW5kX2FwaSAtPiB0aGlzICJyZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgcGVyaXBoZXJhbHMgPSBncm91cCAiUGVyaXBoZXJhbCBTZXJ2aWNlcyIgewogICAgICAgICAgICAKICAgICAgICAgICAgICAgIGRlcyA9IGNvbnRhaW5lciAiUFNJIGRhdGEgZXhjaGFuZ2Ugc2VydmljZSAoREVTKSIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIlBTSSBkYXRhIGV4Y2hhbmdlIHNlcnZpY2UgKERFUyksIG93bmVkIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUaGlzIHJlcHJlc2VudHMgdGhlIGV4cG9ydCBhcGkgb2YgdGhpcyBQU0ktaW5zdGFuY2UuIgogICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9hcGkgLT4gdGhpcyAic3VibWl0cyBhbmQgZ2F0aGVycyBkYXRhIHN0b3JlZCBieSB0aGUgYmFja2VuZCIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIG9wZW5pZF9zZXJ2aWNlID0gY29udGFpbmVyICJvcGVuLWlkIHNlcnZpY2UiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJvcGVuaWQsIG93bmVkIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUaGlzIHNlcnZpY2UgcHJvdmlkZXMgYXV0aGVudGljYXRpb24gYW5kIGF1dGhvcml6YXRpb24gc2VydmljZXMuIEl0IHByb2R1Y2VzIEpXVCBhbmQgb3RoZXIgdG9rZW4tZm9ybWF0cyAoYmVhcmVyLCBldGMuKS4iCiAgICAgICAgICAgICAgICAgICAgcHNpX2Zyb250ZW5kX2FwaSAtPiB0aGlzICJ2YWxpZGF0ZXMgYW5kIGF1dGhlbnRpY2F0ZXMgdXNlcnMiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBhcGlfZGIgPSBjb250YWluZXIgIlBTSSBjb21tZW50IGFwaSBkYXRhYmFzZVxuIChzZWFyY2ggaW5kZXgpIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiUFNJIGNvbW1lbnQgYXBpIGRhdGFiYXNlIiAiRGF0YWJhc2UsIG93bmVkIgogICAgICAgICAgICAgICAgICAgIGRlcyAtPiB0aGlzICJyZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB1c2VyX2RiID0gY29udGFpbmVyICJpbnN0YW5jZSB1c2VyIGRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAic3RvcmVzIHVzZXJzIG9mIHRoaXMgaW5zdGFuY2UiICJEYXRhYmFzZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgcHNpX2Zyb250ZW5kX2FwaSAtPiB0aGlzICJ1cGRhdGVzIG93biB1c2VyIHByb3BlcnRpZXMsIHJlYWRzIG93biB1c2VyIHByb3BlcnRpZXMiCiAgICAgICAgICAgICAgICAgICAgb3BlbmlkX3NlcnZpY2UgLT4gdGhpcyAicmVhZHMgZnJvbSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIG9wZW5pZF9kYiA9IGNvbnRhaW5lciAiaW5zdGFuY2Ugb3BlbmlkIGRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAic3RvcmVzIHRva2VucywgdXNlcnMsIGNvbnN1bWVycywgY29kZXMiICJEYXRhYmFzZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgb3BlbmlkX3NlcnZpY2UgLT4gdGhpcyAicmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICBjdXN0b21lcl9hcHBsaWFuY2UgPSBzb2Z0d2FyZVN5c3RlbSAiQnJvYWRjYXN0ZXIgQ3VzdG9tZXIgQXBwbGlhbmNlIiB7CiAgICAgICAgICAgICAgICB0YWdzICJicm9hZGNhc3RlciBhcHBsaWFuY2UiICJTZXJ2aWNlIEFQSSwgZm9yZWlnbiIKICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJCcm9hZGNhc3RlcidzIHN0cmVhbWluZyBhcHBsaWFuY2UsIGNvbnRlbnQtbWFuYWdlbWVudC1zeXN0ZW0gKG1heSBiZSBhIHN0cmVhbWluZyBwbGF0Zm9ybSwgbWF5IGJlIGFuIGVkaXRvcmlhbCBzeXN0ZW0gb3IgYW55IG90aGVyIHN5c3RlbSB0YXJnZXRlZCB0b3dhcmRzIGN1c3RvbWVycykiCiAgICAgICAgICAgICAgICBmcm9udGVuZCA9IGdyb3VwICJGcm9udGVuZCIgewogICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9tb2R1bGUgPSBjb250YWluZXIgIlBTSSBmcm9udGVuZCBtb2R1bGUiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiUFNJIGZyb250ZW5kIG1vZHVsZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUaGlzIHJlcHJlc2VudHMgYWxsIGZyb250ZW5kIG1vZHVsZXMgb2YgdGhpcyBQU0ktaW5zdGFuY2UuIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBjdXN0b21lcl9mcm9udGVuZF9mcmFtZXdvcmsgPSBjb250YWluZXIgImZyb250ZW5kIGZyYW1ld29yayBvZiB0aGUgY3VzdG9tZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiUFNJIGZyb250ZW5kIEFQSSwgZm9yZWlnbiIKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlRoaXMgcmVwcmVzZW50cyBhbGwgYXBpLXNlcnZpY2VzIG9mIHRoaXMgUFNJLWluc3RhbmNlLiIKICAgICAgICAgICAgICAgICAgICAgICAgcHNpX2Zyb250ZW5kX21vZHVsZSAtPiB0aGlzICJlbWJlZHMiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgYmFja2VuZCA9IGdyb3VwICJCYWNrZW5kIiB7CiAgICAgICAgICAgICAgICAgICAgcHNpX2Zyb250ZW5kX2FwaSA9IGNvbnRhaW5lciAiUFNJIGZyb250ZW5kIGFwaSIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJQU0kgZnJvbnRlbmQgYXBpLCBvd25lZCIKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlRoaXMgcmVwcmVzZW50cyBhbGwgZnJvbnRlbmQgbW9kdWxlcyBvZiB0aGlzIFBTSS1pbnN0YW5jZS4iCiAgICAgICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9tb2R1bGUgLT4gdGhpcyAiY2FsbHMiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGN1c3RvbWVyX2JhY2tlbmQgPSBjb250YWluZXIgImJhY2tlbmQgb2YgdGhlIGN1c3RvbWVyIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIlBTSSBmcm9udGVuZCBBUEksIGZvcmVpZ24iCiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUaGlzIHJlcHJlc2VudHMgYWxsIGFwaS1zZXJ2aWNlcyBvZiB0aGlzIFBTSS1pbnN0YW5jZS4iCiAgICAgICAgICAgICAgICAgICAgICAgIHRoaXMgLT4gcHNpLm9wZW5pZF9zZXJ2aWNlICJhdXRoZW50aWNhdGVzIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIG90aGVyX3BzaV9zeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiT3RoZXIgU29NZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIHRhZ3MgIm90aGVyIHBzaSIgIlNlcnZpY2UgQVBJLCBmb3JlaWduIgogICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk90aGVyIGJyb2FkY2FzdGVycyBQU0kgc3lzdGVtIgogICAgICAgICAgICAgICAgZnJvbnRlbmQgPSBncm91cCAiUFNJIEZyb250ZW5kIiB7CiAgICAgICAgICAgICAgICAgICAgcHNpX2Zyb250ZW5kX21vZHVsZSA9IGNvbnRhaW5lciAiUFNJIGZyb250ZW5kIG1vZHVsZSIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJQU0kgZnJvbnRlbmQgbW9kdWxlLCBvd25lZCIKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlRoaXMgcmVwcmVzZW50cyBhbGwgZnJvbnRlbmQgbW9kdWxlcyBvZiB0aGlzIFBTSS1pbnN0YW5jZS4iCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9hcGkgPSBjb250YWluZXIgIlBTSSBmcm9udGVuZCBBUEkiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiUFNJIGZyb250ZW5kIEFQSSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUaGlzIHJlcHJlc2VudHMgYWxsIGFwaS1zZXJ2aWNlcyBvZiB0aGlzIFBTSS1pbnN0YW5jZS4iCiAgICAgICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9tb2R1bGUgLT4gdGhpcyAic3VibWl0cyBhbmQgZ2F0aGVycyBkYXRhIHN0b3JlZCBieSB0aGUgYmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVyICJQU0kgYXBpIGRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIlBTSSBhcGkgZGF0YWJhc2UiICJEYXRhYmFzZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9hcGkgLT4gdGhpcyAicmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHBlcmlwaGVyYWxzID0gZ3JvdXAgIlBlcmlwaGVyYWwgU2VydmljZXMiIHsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIGRlcyA9IGNvbnRhaW5lciAiUFNJIGRhdGEgZXhjaGFuZ2Ugc2VydmljZSAoREVTKSIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJQU0kgZGF0YSBleGNoYW5nZSBzZXJ2aWNlIChERVMpLCBvd25lZCIKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlRoaXMgcmVwcmVzZW50cyB0aGUgZXhwb3J0IGFwaSBvZiB0aGlzIFBTSS1pbnN0YW5jZS4iCiAgICAgICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9hcGkgLT4gdGhpcyAic3VibWl0cyBhbmQgZ2F0aGVycyBkYXRhIHN0b3JlZCBieSB0aGUgYmFja2VuZCIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgb3BlbmlkX3NlcnZpY2UgPSBjb250YWluZXIgIm9wZW4taWQgc2VydmljZSIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJvcGVuaWQsIG93bmVkIgogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiVGhpcyBzZXJ2aWNlIHByb3ZpZGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3JpemF0aW9uIHNlcnZpY2VzLiBJdCBwcm9kdWNlcyBKV1QgYW5kIG90aGVyIHRva2VuLWZvcm1hdHMgKGJlYXJlciwgZXRjLikuIgogICAgICAgICAgICAgICAgICAgICAgICBwc2lfZnJvbnRlbmRfYXBpIC0+IHRoaXMgInZhbGlkYXRlcyBhbmQgYXV0aGVudGljYXRlcyB1c2VycyIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgYXBpX2RiID0gY29udGFpbmVyICJQU0kgY29tbWVudCBhcGkgZGF0YWJhc2VcbiAoc2VhcmNoIGluZGV4KSIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJQU0kgY29tbWVudCBhcGkgZGF0YWJhc2UiICJEYXRhYmFzZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgICAgIGRlcyAtPiB0aGlzICJyZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIHVzZXJfZGIgPSBjb250YWluZXIgImluc3RhbmNlIHVzZXIgZGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAic3RvcmVzIHVzZXJzIG9mIHRoaXMgaW5zdGFuY2UiICJEYXRhYmFzZSwgb3duZWQiCiAgICAgICAgICAgICAgICAgICAgICAgIHBzaV9mcm9udGVuZF9hcGkgLT4gdGhpcyAidXBkYXRlcyBvd24gdXNlciBwcm9wZXJ0aWVzLCByZWFkcyBvd24gdXNlciBwcm9wZXJ0aWVzIgogICAgICAgICAgICAgICAgICAgICAgICBvcGVuaWRfc2VydmljZSAtPiB0aGlzICJyZWFkcyBmcm9tIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBvcGVuaWRfZGIgPSBjb250YWluZXIgImluc3RhbmNlIG9wZW5pZCBkYXRhYmFzZSIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJzdG9yZXMgdG9rZW5zLCB1c2VycywgY29uc3VtZXJzLCBjb2RlcyIgIkRhdGFiYXNlLCBvd25lZCIKICAgICAgICAgICAgICAgICAgICAgICAgb3BlbmlkX3NlcnZpY2UgLT4gdGhpcyAicmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIHVzZXIgLT4gY3VzdG9tZXJfYXBwbGlhbmNlICJDb25zdW1lcyBjb21tZW50cyAvIHNvY2lhbCBjb250ZW50cyB0aGF0IGFyZSBlbWJlZGRlZCBpbnRvIHRoZSBjdXN0b21lciBhcHBsaWFuY2UiCiAgICAgICAgdXNlciAtPiBwc2kucHNpX2Zyb250ZW5kX21vZHVsZSAiZGlyZWN0IGludGVyYWN0aW9uIHdpdGggYSBmdXNlZCBmcm9udGVuZCAoc29jaWFsIG5ldHdvcmspIG9yIGEgY2F0YWxvZ3VlIG9mIGFwcHMiCiAgICAgICAgY3VzdG9tZXJfYXBwbGlhbmNlIC0+IHBzaS5wc2lfZnJvbnRlbmRfbW9kdWxlICJlbWJlZHMgUFNJLWZyb250ZW5kIG1vZHVsZXMobmF0aXZlIG9yIHZpYSBpZnJhbWUpIgogICAgICAgIGN1c3RvbWVyX2FwcGxpYW5jZSAtPiBwc2kucHNpX2Zyb250ZW5kX2FwaSAiYXV0aGVudGljYXRlcyBhdCBQU0ktcmVsYXRlZCAgYmFja2VuZHMgb2YgaXRzIG93biBQU0ktY2x1c3RlciIKICAgICAgICBvdGhlcl9wc2lfc3lzdGVtLmRlcyAtPiBwc2kuZGVzCiAgICAgICAgcHNpLmRlcyAtPiBvdGhlcl9wc2lfc3lzdGVtLmRlcyAiY29tbWVudCBhbmQgYWNjb3VudCBleGNoYW5nZSB2aWEgZ2VuZXJpYyBwcm90b2NvbCAoQVRfUHJvdG8sIEFjdGl2aXR5UHViLCBQdWJTdWIpIgogICAgICAgIHBzaS5vcGVuaWRfc2VydmljZSAtPiBvdGhlcl9wc2lfc3lzdGVtLm9wZW5pZF9zZXJ2aWNlICJhdXRoZW50aWNhdGUgYW5kIGF1dGhvcml6ZSBzeXN0ZW0gdXNpbmcgYXV0aC1jb2RlIgogICAgICAgIG90aGVyX3BzaV9zeXN0ZW0ub3BlbmlkX3NlcnZpY2UgLT4gcHNpLm9wZW5pZF9zZXJ2aWNlICJhdXRoZW50aWNhdGUgYW5kIGF1dGhvcml6ZSBzeXN0ZW0gdXNpbmcgYXV0aC1jb2RlIgogICAgICAgIHVzZXJfb2Zfb3RoZXJfc3lzdGVtIC0+IG90aGVyX3BzaV9zeXN0ZW0gIkNvbnN1bWVzIGNvbW1lbnRzIC8gc29jaWFsIGNvbnRlbnRzIG9mIHRoaXMgUFNJLXN5c3RlbSIKICAgICAgICB9CgogICAgdmlld3MgewoKICAgICAgICBzeXN0ZW1MYW5kc2NhcGUgInN5c3RlbUxhbmRzY2FwZV9wc2kiIHBzaSB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KICAgICAgICBzeXN0ZW1Db250ZXh0IHBzaSAic3lzdGVtQ29udGV4dF9vd25fcHNpX3N5c3RlbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgaW5jbHVkZSAtPnVzZXJfb2Zfb3RoZXJfc3lzdGVtLT4KICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgcHNpICJDb250YWluZXJzX293bl9wc2lfc3lzdGVtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgLT5wc2kucHNpX2Zyb250ZW5kX2FwaS0+CiAgICAgICAgICAgIGluY2x1ZGUgLT5wc2kucHNpX2Zyb250ZW5kX21vZHVsZS0+CiAgICAgICAgICAgIGluY2x1ZGUgLT5wc2kub3BlbmlkX3NlcnZpY2UtPgogICAgICAgICAgICBpbmNsdWRlIC0+b3RoZXJfcHNpX3N5c3RlbS0+CiAgICAgICAgICAgIAogICAgICAgIH0KICAgICAgICAKICAgICAgICBjb250YWluZXIgb3RoZXJfcHNpX3N5c3RlbSAiQ29udGFpbmVyc19vdGhlcl9wc2lfc3lzdGVtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgLT5vdGhlcl9wc2lfc3lzdGVtLnBzaV9mcm9udGVuZF9hcGktPgogICAgICAgICAgICBpbmNsdWRlIC0+b3RoZXJfcHNpX3N5c3RlbS5wc2lfZnJvbnRlbmRfbW9kdWxlLT4KICAgICAgICAgICAgaW5jbHVkZSAtPm90aGVyX3BzaV9zeXN0ZW0ub3BlbmlkX3NlcnZpY2UtPgogICAgICAgICAgICAKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBjdXN0b21lcl9hcHBsaWFuY2UgIkNvbnRhaW5lcnNfY3VzdG9tZXJfYXBwbGlhbmNlIiB7CiAgICAgICAgICAgIGluY2x1ZGUgLT5jdXN0b21lcl9hcHBsaWFuY2UucHNpX2Zyb250ZW5kX21vZHVsZS0+CiAgICAgICAgICAgIGluY2x1ZGUgLT5jdXN0b21lcl9hcHBsaWFuY2UuY3VzdG9tZXJfYmFja2VuZC0+CiAgICAgICAgICAgIAogICAgICAgIH0KCgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiU2VydmljZSBBUEkiIHsKICAgICAgICAgICAgICAgIHNoYXBlIGhleGFnb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgY3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJvd25lZCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDA2MkZGCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAieWVsbG93IiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNFREYwOEMKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJmb3JlaWduIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNBM0EzQTMKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJ1c2VyIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwMDFBQzUKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICB9CiAgICB9Cgp9"
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "systemContext_own_psi_system",
+      "styles" : {
+        "elements" : [ {
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "shape" : "Hexagon",
+          "tag" : "Service API"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#0062ff",
+          "tag" : "owned"
+        }, {
+          "background" : "#edf08c",
+          "tag" : "yellow"
+        }, {
+          "background" : "#a3a3a3",
+          "tag" : "foreign"
+        }, {
+          "background" : "#001ac5",
+          "color" : "#ffffff",
+          "tag" : "user"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 2835,
+        "width" : 3450
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 265,
+        "y" : 165
+      }, {
+        "id" : "2",
+        "x" : 2825,
+        "y" : 1435
+      }, {
+        "id" : "4",
+        "x" : 240,
+        "y" : 875
+      }, {
+        "id" : "5",
+        "x" : 240,
+        "y" : 1475
+      }, {
+        "id" : "7",
+        "x" : 240,
+        "y" : 2125
+      }, {
+        "id" : "9",
+        "x" : 2037,
+        "y" : 1485
+      }, {
+        "id" : "11",
+        "x" : 1287,
+        "y" : 1485
+      }, {
+        "id" : "15",
+        "x" : 1287,
+        "y" : 2135
+      }, {
+        "id" : "18",
+        "x" : 2037,
+        "y" : 2135
+      }, {
+        "id" : "20",
+        "x" : 1290,
+        "y" : 290
+      }, {
+        "id" : "31",
+        "x" : 2800,
+        "y" : 2135
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers_own_psi_system",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "10",
+        "vertices" : [ {
+          "x" : 1150,
+          "y" : 1330
+        }, {
+          "x" : 2265,
+          "y" : 1335
+        } ]
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "17"
+      }, {
+        "id" : "19"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "55",
+        "vertices" : [ {
+          "x" : 2744,
+          "y" : 1871
+        } ]
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "6"
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 2525,
+          "y" : 2160
+        } ]
+      }, {
+        "id" : "66",
+        "vertices" : [ {
+          "x" : 2205,
+          "y" : 1860
+        } ]
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "8"
+      } ],
+      "softwareSystemId" : "3"
+    }, {
+      "dimensions" : {
+        "height" : 2966,
+        "width" : 3679
+      },
+      "elements" : [ {
+        "id" : "3",
+        "x" : 3004,
+        "y" : 2233
+      }, {
+        "id" : "32",
+        "x" : 433,
+        "y" : 433
+      }, {
+        "id" : "33",
+        "x" : 433,
+        "y" : 1033
+      }, {
+        "id" : "35",
+        "x" : 433,
+        "y" : 1633
+      }, {
+        "id" : "37",
+        "x" : 2241,
+        "y" : 1633
+      }, {
+        "id" : "39",
+        "x" : 1491,
+        "y" : 1633
+      }, {
+        "id" : "43",
+        "x" : 1491,
+        "y" : 2233
+      }, {
+        "id" : "46",
+        "x" : 2241,
+        "y" : 2233
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers_other_psi_system",
+      "order" : 4,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "34"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "38",
+        "vertices" : [ {
+          "x" : 2091,
+          "y" : 1529
+        } ]
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "44",
+        "vertices" : [ {
+          "x" : 1033,
+          "y" : 1529
+        }, {
+          "x" : 1341,
+          "y" : 2037
+        } ]
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "54",
+        "vertices" : [ {
+          "x" : 2750,
+          "y" : 2219
+        } ]
+      }, {
+        "id" : "59",
+        "vertices" : [ {
+          "x" : 2944,
+          "y" : 1990
+        } ]
+      }, {
+        "id" : "63",
+        "vertices" : [ {
+          "x" : 2241,
+          "y" : 2037
+        } ]
+      }, {
+        "id" : "65",
+        "vertices" : [ {
+          "x" : 1941,
+          "y" : 2037
+        }, {
+          "x" : 2720,
+          "y" : 2233
+        } ]
+      } ],
+      "softwareSystemId" : "31"
+    }, {
+      "dimensions" : {
+        "height" : 2158,
+        "width" : 2829
+      },
+      "elements" : [ {
+        "id" : "3",
+        "x" : 1195,
+        "y" : 1633
+      }, {
+        "id" : "21",
+        "x" : 433,
+        "y" : 433
+      }, {
+        "id" : "22",
+        "x" : 433,
+        "y" : 1033
+      }, {
+        "id" : "24",
+        "x" : 1945,
+        "y" : 1033
+      }, {
+        "id" : "26",
+        "x" : 1195,
+        "y" : 1033
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers_customer_appliance",
+      "order" : 5,
+      "paperSize" : "A4_Landscape",
+      "relationships" : [ {
+        "id" : "23"
+      }, {
+        "id" : "25",
+        "vertices" : [ {
+          "x" : 2175,
+          "y" : 600
+        } ]
+      }, {
+        "id" : "28"
+      } ],
+      "softwareSystemId" : "20"
+    } ],
+    "systemContextViews" : [ {
+      "dimensions" : {
+        "height" : 2716,
+        "width" : 1904
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 571,
+        "y" : 208
+      }, {
+        "id" : "2",
+        "x" : 1296,
+        "y" : 1508
+      }, {
+        "id" : "3",
+        "x" : 546,
+        "y" : 1558
+      }, {
+        "id" : "20",
+        "x" : 208,
+        "y" : 908
+      }, {
+        "id" : "31",
+        "x" : 546,
+        "y" : 2208
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "systemContext_own_psi_system",
+      "order" : 2,
+      "paperSize" : "A4_Portrait",
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "50",
+        "vertices" : [ {
+          "x" : 808,
+          "y" : 908
+        }, {
+          "x" : 808,
+          "y" : 1208
+        } ]
+      }, {
+        "id" : "56",
+        "vertices" : [ {
+          "x" : 921,
+          "y" : 2077
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 621,
+          "y" : 2077
+        } ]
+      }, {
+        "id" : "67"
+      } ],
+      "softwareSystemId" : "3"
+    } ],
+    "systemLandscapeViews" : [ {
+      "description" : "psi",
+      "dimensions" : {
+        "height" : 2109,
+        "width" : 2346
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 206,
+        "y" : 151
+      }, {
+        "id" : "2",
+        "x" : 1746,
+        "y" : 771
+      }, {
+        "id" : "3",
+        "x" : 996,
+        "y" : 821
+      }, {
+        "id" : "20",
+        "x" : 200,
+        "y" : 843
+      }, {
+        "id" : "31",
+        "x" : 996,
+        "y" : 1471
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "systemLandscape_psi",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "50",
+        "vertices" : [ {
+          "x" : 1221,
+          "y" : 356
+        } ]
+      }, {
+        "id" : "56",
+        "vertices" : [ {
+          "x" : 1371,
+          "y" : 1340
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 1071,
+          "y" : 1340
+        } ]
+      }, {
+        "id" : "67"
+      } ]
+    } ]
+  }
+}

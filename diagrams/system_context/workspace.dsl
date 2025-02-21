@@ -16,7 +16,7 @@ workspace {
                 !include modules/customer_appliance.dsl
         }
 
-        other_psi_system = softwareSystem "Other PSI System" {
+        other_psi_system = softwareSystem "Other SoMe System" {
                 tags "other psi" "Service API, foreign"
                 description "Other broadcasters PSI system"
                 !include modules/one_psi.dsl
@@ -27,17 +27,21 @@ workspace {
         customer_appliance -> psi.psi_frontend_module "embeds PSI-frontend modules(native or via iframe)"
         customer_appliance -> psi.psi_frontend_api "authenticates at PSI-related  backends of its own PSI-cluster"
         other_psi_system.des -> psi.des
-        psi.des -> other_psi_system.des "comment and account exchange"
+        psi.des -> other_psi_system.des "comment and account exchange via generic protocol (AT_Proto, ActivityPub, PubSub)"
         psi.openid_service -> other_psi_system.openid_service "authenticate and authorize system using auth-code"
         other_psi_system.openid_service -> psi.openid_service "authenticate and authorize system using auth-code"
         user_of_other_system -> other_psi_system "Consumes comments / social contents of this PSI-system"
         }
 
     views {
+
+        systemLandscape "systemLandscape_psi" psi {
+            include *
+        }
         systemContext psi "systemContext_own_psi_system" {
             include *
             include ->user_of_other_system->
-            autolayout
+            
         }
 
         container psi "Containers_own_psi_system" {
@@ -45,20 +49,20 @@ workspace {
             include ->psi.psi_frontend_module->
             include ->psi.openid_service->
             include ->other_psi_system->
-            autolayout
+            
         }
         
         container other_psi_system "Containers_other_psi_system" {
             include ->other_psi_system.psi_frontend_api->
             include ->other_psi_system.psi_frontend_module->
             include ->other_psi_system.openid_service->
-            autoLayout
+            
         }
 
         container customer_appliance "Containers_customer_appliance" {
             include ->customer_appliance.psi_frontend_module->
             include ->customer_appliance.customer_backend->
-            autoLayout
+            
         }
 
 

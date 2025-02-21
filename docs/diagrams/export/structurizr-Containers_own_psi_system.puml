@@ -91,7 +91,7 @@ hexagon "==Broadcaster Customer Appliance\n<size:10>[Software System]</size>\n\n
 hexagon "==Other PSI System\n<size:10>[Software System]</size>\n\nOther broadcasters PSI system" <<OtherPSISystem>> as OtherPSISystem
 
 rectangle "PSI System\n<size:10>[Software System]</size>" <<PSISystem>> {
-  rectangle "PSI Frontend" <<group1>> {
+  rectangle "PSI Frontend" <<group1>> as group1 {
     skinparam RectangleBorderColor<<group1>> #cccccc
     skinparam RectangleFontColor<<group1>> #cccccc
     skinparam RectangleBorderStyle<<group1>> dashed
@@ -101,7 +101,7 @@ rectangle "PSI System\n<size:10>[Software System]</size>" <<PSISystem>> {
     database "==PSI api database\n<size:10>[Container]</size>" <<PSISystem.PSIapidatabase>> as PSISystem.PSIapidatabase
   }
 
-  rectangle "Peripheral Services" <<group2>> {
+  rectangle "Peripheral Services" <<group2>> as group2 {
     skinparam RectangleBorderColor<<group2>> #cccccc
     skinparam RectangleFontColor<<group2>> #cccccc
     skinparam RectangleBorderStyle<<group2>> dashed

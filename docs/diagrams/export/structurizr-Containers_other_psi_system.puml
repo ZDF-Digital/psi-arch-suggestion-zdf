@@ -70,7 +70,7 @@ skinparam rectangle<<OtherPSISystem>> {
 hexagon "==PSI System\n<size:10>[Software System]</size>\n\nPSI system context" <<PSISystem>> as PSISystem
 
 rectangle "Other PSI System\n<size:10>[Software System]</size>" <<OtherPSISystem>> {
-  rectangle "PSI Frontend" <<group1>> {
+  rectangle "PSI Frontend" <<group1>> as group1 {
     skinparam RectangleBorderColor<<group1>> #cccccc
     skinparam RectangleFontColor<<group1>> #cccccc
     skinparam RectangleBorderStyle<<group1>> dashed
@@ -80,7 +80,7 @@ rectangle "Other PSI System\n<size:10>[Software System]</size>" <<OtherPSISystem
     database "==PSI api database\n<size:10>[Container]</size>" <<OtherPSISystem.PSIapidatabase>> as OtherPSISystem.PSIapidatabase
   }
 
-  rectangle "Peripheral Services" <<group2>> {
+  rectangle "Peripheral Services" <<group2>> as group2 {
     skinparam RectangleBorderColor<<group2>> #cccccc
     skinparam RectangleFontColor<<group2>> #cccccc
     skinparam RectangleBorderStyle<<group2>> dashed
