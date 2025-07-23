@@ -10,7 +10,7 @@ workspace {
             !include modules/one_psi.dsl
         }
 
-        customer_appliance = softwareSystem "Broadcaster Customer Appliance" {
+        customer_appliance = softwareSystem "Broadcaster\n Appliance" {
                 tags "broadcaster appliance" "Service API, foreign"
                 description "Broadcaster's streaming appliance, content-management-system (may be a streaming platform, may be an editorial system or any other system targeted towards customers)"
                 !include modules/customer_appliance.dsl
